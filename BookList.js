@@ -39,6 +39,7 @@ lastBook, bookShelf) {
 //     create image tag, create image, put image in li tag             
             var newImg = document.createElement("img");
             newImg.src = this.bookShelf[i].imageUrl;
+            newImg.width = 200;
             newLI.appendChild(newImg);
             newUL.appendChild(newLI);
         }
