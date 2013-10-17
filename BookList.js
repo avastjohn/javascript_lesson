@@ -21,11 +21,19 @@ lastBook, bookShelf) {
         }
     };
 
-    this.printAllBookInfo = function() {
-        console.log("lastBook: " + this.lastBook.bookTitle);
-        console.log("currentBook: " + this.currentBook.bookTitle);
-        console.log("nextBook: " + this.nextBook.bookTitle);
-        console.log("unread: " + this.numberUnread + ", read: " + this.numberRead);
+    this.printCurrentBook = function() {
+        place = document.getElementById("booksGoHere");
+        place.innerHTML = "<strong>currentBook:</strong> " + this.currentBook.bookTitle;
+
+    };
+
+    this.printBookList = function() {
+        list = [];
+        place = document.getElementById("allBooks");
+        for (var i=0; i < this.bookShelf.length; i++) {
+            list.push(this.bookShelf[i].bookTitle);
+        }
+        place.innerHTML = "<strong>" + list + "</strong>";
     };
 };
 
@@ -47,8 +55,4 @@ var avaBookShelf = [prideAndPrej, grapesOfWrath, fangirl, foundations, hpSix];
 
 avaBookList = new Booklist(1, 4, fangirl, foundations, prideAndPrej, avaBookShelf);
 
-console.log("*** before ****");
-avaBookList.printAllBookInfo();
-avaBookList.chooseNextBook();
-console.log("*** after ****");
-avaBookList.printAllBookInfo();
+avaBookList.printBookList();
