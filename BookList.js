@@ -28,12 +28,20 @@ lastBook, bookShelf) {
     };
 
     this.printBookList = function() {
-        list = [];
-        place = document.getElementById("allBooks");
+//        list = [];
+//        place = document.getElementById("allBooks");
+//        for (var i=0; i < this.bookShelf.length; i++) {
+//            list.push(this.bookShelf[i].bookTitle);
+//        }
+//        place.innerHTML = "<strong>" + list + "</strong>";
+        var newUL = document.createElement("ul");
         for (var i=0; i < this.bookShelf.length; i++) {
-            list.push(this.bookShelf[i].bookTitle);
+            var newLI = document.createElement("li");
+            var txt = document.createTextNode(this.bookShelf[i].bookTitle);
+            newLI.appendChild(txt);
+            newUL.appendChild(newLI);
         }
-        place.innerHTML = "<strong>" + list + "</strong>";
+        document.body.appendChild(newUL);
     };
 };
 
