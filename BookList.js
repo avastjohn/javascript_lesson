@@ -32,15 +32,15 @@ lastBook, bookShelf) {
 //      create list item tag, create textNode, put textNode in li tag
             var newLI = document.createElement("li");
             var txt = document.createTextNode(this.bookShelf[i].bookTitle);
+            newBr = document.createElement('br');
             newLI.appendChild(txt);
-            newUL.appendChild(newLI);
-
-//     create image tag, create .....??                
+            newLI.appendChild(newBr);
+            
+//     create image tag, create image, put image in li tag             
             var newImg = document.createElement("img");
             newImg.src = this.bookShelf[i].imageUrl;
-            var pageNode = document.getElementsByTagName('body')[0];
-            pageNode.appendChild(newImg);
-
+            newLI.appendChild(newImg);
+            newUL.appendChild(newLI);
         }
         document.body.appendChild(newUL);
     };
