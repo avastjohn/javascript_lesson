@@ -3,6 +3,23 @@
         <h1>My book list</h1>
         <div id='booksGoHere'></div>
         <div id='allBooks'></div>
+        <form action ="/added_book.html" method="GET">
+        <div>
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" />
+            <br /><label for="genre">Genre:</label>
+            <input type="text" id="genre" />
+            <br /><label for="author">Author:</label>
+            <input type="text" id="author" />
+            <br /><label for="cover">Cover URL:</label>
+            <input type="text" id="cover" />
+            <br /><label for="read">I have read this book</label>
+            <input type="checkbox" id="read" value="checked"/>
+            <br /><label for="read_date">Read date (if applicable):</label>
+            <input type="text" id="read_date" />
+        </div>
+        </form>
+    <button type="Submit">Add book!</button>
         <script src="BookList.js"></script>
     </body>
 </html>
